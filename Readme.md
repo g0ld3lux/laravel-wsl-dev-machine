@@ -1,3 +1,4 @@
+![Terminal Output](images/terminal.png)
 # Setting Up Laravel Dev Machine With WSL 
 1. Windows 10 Insiders Build
   [windows 10 build 14971](http://winaero.com/blog/how-to-get-windows-10-build-14971-iso-images)
