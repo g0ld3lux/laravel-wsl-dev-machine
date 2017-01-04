@@ -1,0 +1,178 @@
+--ignore-ack-defaults
+# This is the default ackrc for ack version 2.14.
+
+# There are four different ways to match
+#
+# is:  Match the filename exactly
+#
+# ext: Match the extension of the filename exactly
+#
+# match: Match the filename against a Perl regular expression
+#
+# firstlinematch: Match the first 250 characters of the first line
+#   of text against a Perl regular expression.  This is only for
+#   the --type-add option.
+
+
+### Directories to ignore
+
+
+# Git
+# http://git-scm.com/
+--ignore-directory=is:.git
+
+# Node modules created by npm
+--ignore-directory=is:node_modules
+
+# Vendor workspace folder
+# http://laravel.com
+--ignore-directory=is:vendor
+
+--ignore-directory=is:bootstrap
+
+--ignore-directory=is:storage
+
+--ignore-directory=is:build
+
+--ignore-directory=is:laradock
+
+--ignore-directory=is:docker
+
+--ignore-dir=.idea
+
+--ignore-dir=public
+
+--ignore-dir=resources
+
+--ignore-dir=assets
+
+--ignore-dir=js
+
+--ignore-dir=css
+
+--ignore-dir=components
+
+--ignore-dir=sass
+
+### Files to ignore
+
+
+
+# minified Javascript
+--ignore-file=match:/[.-]min[.]js$/
+--ignore-file=match:/[.]js[.]min$/
+
+# minified CSS
+--ignore-file=match:/[.]min[.]css$/
+--ignore-file=match:/[.]css[.]min$/
+
+# JS and CSS source maps
+--ignore-file=match:/[.]js[.]map$/
+--ignore-file=match:/[.]css[.]map$/
+
+# PDFs, because they pass Perl's -T detection
+--ignore-file=ext:pdf
+--ignore-file=ext:log
+
+# Common graphics, just as an optimization
+--ignore-file=ext:gif,jpg,jpeg,png
+
+# Mac
+--ignore-file=match:/[.]DS_Store$/
+--ignore-file=match:/favicon.ico$/
+
+# Laravel ENV Dev
+--ignore-file=match:/[.]env$/
+--ignore-file=match:/[.]env.example$/
+--ignore-file=match:/tags$/
+--ignore-file=match:/yarn.lock$/
+--ignore-file=match:/composer.lock$/
+--ignore-file=match:/readme.md$/
+--ignore-file=match:/[.]gitattributes$/
+--ignore-file=match:/[.]gitignore$/
+--ignore-file=match:/Dockerfile$/
+--ignore-file=match:/dockerfile$/
+--ignore-file=match:/docker-compose.yml$/
+--ignore-file=match:/Docker-compose.yml$/
+--ignore-file=match:/[.]docker-compose.yml$/
+--ignore-file=match:/Vagrantfile$/
+--ignore-file=match:/Homestead.yaml$/
+--ignore-file=match:/[.]gitmodules$/
+--ignore-file=match:/[.]htaccess$/
+--ignore-file=match:/[.]_htaccess$/
+--ignore-file=match:/robots.txt$/
+--ignore-file=match:/server.php$/
+--ignore-file=match:/web.config$/
+--ignore-file=match:/[.]phpstorm.meta.php$/
+
+
+
+# Makefiles
+# http://www.gnu.org/s/make/
+--type-add=make:is:makefile
+--type-add=make:is:Makefile
+
+# Dockerfile
+# http://docker.io
+--type-add=make:is:Dockerfile
+--type-add=make:is:docker-compose.yml
+
+# Vagrantfile
+# http://vagrant.up
+--type-add=make:is:Vagrantfile
+--type-add=make:is:Homestead.yaml
+
+# Batch
+--type-add=batch:ext:bat,cmd
+
+# CSS
+# http://www.w3.org/Style/CSS/
+--type-add=css:ext:css
+
+
+# HTML
+--type-add=html:ext:htm,html
+
+# JavaScript
+--type-add=js:ext:js
+
+# JSON
+# http://www.json.org/
+--type-add=json:ext:json
+
+# PHP
+# http://www.php.net/
+--type-add=php:ext:php,phpt,php3,php4,php5,phtml
+--type-add=php:firstlinematch:/^#!.*\bphp/
+
+# Sass
+# http://sass-lang.com
+--type-add=sass:ext:sass,scss
+
+# Shell
+--type-add=shell:ext:sh,bash,csh,tcsh,ksh,zsh,fish
+--type-add=shell:firstlinematch:/^#!.*\b(?:ba|t?c|k|z|fi)?sh\b/
+
+# SQL
+# http://www.iso.org/iso/catalogue_detail.htm?csnumber=45498
+--type-add=sql:ext:sql,ctl
+
+# http://www.vim.org/
+--type-add=vim:ext:vim
+
+# XML
+# http://www.w3.org/TR/REC-xml/
+--type-add=xml:ext:xml,dtd,xsl,xslt,ent
+--type-add=xml:firstlinematch:/<[?]xml/
+
+# YAML
+# http://yaml.org/
+--type-add=yaml:ext:yaml,yml
+
+# VUE
+# http://vuejs.org
+--type-add=vue:ext:vue
+
+# BLADE
+# https://laravel.com/docs/5.3/blade
+--type-add=blade:ext:blade.php
